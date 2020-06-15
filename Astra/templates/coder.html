@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/static/key.css">
+<link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+
+
+
+
+</head>
+<!------ Include the above in your HEAD tag ---------->
+<body>
+ <div id="container">
+  <div class="mockup">
+
+    <div class="outer-search">
+      <div class="search-filter">
+
+      <div class="filter">
+         <div class="pill active"
+           <button class="tablinks " style="margin-left:25px;border-radius: 15px 0px 0px 15px;padding-right: 100px;padding-left: 100px;" onclick="openVideo(event, 'Default')">Default</button>
+         </div>
+         <div class="pill active"
+           <button class="tablinks " style="border-radius: 0px 0px 0px 0px; padding-right: 120px;padding-left: 50px;" onclick="openVideo(event, 'View1')">View1</button>
+         </div>
+         <div class="pill active"
+           <button class="tablinks "style="border-radius: 0px 15px 15px 0px; padding-right: 140px;padding-left: 40px;" onclick="openVideo(event, 'View2')">View2</button>
+         </div>
+     <div>
+           <a href="{{ url_for('logout') }}"><img src="/static/power-button-512.png" style="height:40px;width:50px;margin-left:300px;"></a>
+
+      </div>
+
+
+      </div>
+    </div>
+    </div>
+
+    <div class="feeds" id="feeds">
+      <div class="board s-1">
+{#        <h1>Modules</h1>#}
+
+       <div class="card list-challenge">
+<button style="margin-top:40px;width: 250px;" class="btn first"> Module1 </button>
+        <button style="margin-top:10px;width: 250px;" class="btn first"> Module2 </button>
+            <button style="margin-top:10px;width: 250px;" class="btn first"> Module3 </button>
+        <button style="margin-top:10px;width: 250px;" class="btn first"> Module4 </button>
+
+       </div>
+
+
+      </div>
+      <div class="today s-2">
+
+        <div class="card"style="height:450px;width:600px;">
+            <div id="Default" class="tabcontent">
+                  <img id="bg"src="{{ url_for('video_feed') }}"style="width:650px;">
+{#					<img id="bg" src="/static/fff.png">#}
+            </div>
+            <div id="View1" class="tabcontent">
+
+
+                <canvas id="pointcloud" width=600% height=400%></canvas>
+
+                {#<img id="bg"src="{{ url_for('video_feed1') }}"style="width:600px;">#}
+{#                <p>Second camera video</p>#}
+{#					<img id="bg" src="/static/fff.png">#}
+            </div>
+            <div id="View2" class="tabcontent">
+{#                <img id="bg"src="{{ url_for('video_feed1') }}"style="width:600px;">#}
+               {# <p>Third camera video</p>#}
+{#					<img id="bg" src="/static/fff.png">#}
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="card list-challenge" style="height: 100px;">
+            <ul>
+                <input type="text" id="CMD" name="CMD" name="text" placeholder="text" style="width:300px;">
+                <br>
+
+                <span id="response" style="color:#6666F4" ></span>
+			</ul>
+        </div>
+      </div>
+
+              <div class="yesterday s-2">
+
+{#        <h1> Status Bar</h1>#}
+        <div class="card list-challenge">
+            <h3 style="color:#579619;">*controlers: working</h3>
+            <h3 style="color:#579619;">*video transmittion: working</h3>
+            <h3 style="color:#D24747;">*motors: error</h3>
+        </div>
+        </div>
+    </div>
+
+
+</div>
+</div>
+</div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <script type="text/javascript" src={{url_for('.static', filename='js/coder.js')}}></script>
+    <script type="text/javascript" src={{url_for('.static', filename='js/plot/three.min.js')}}></script>
+    <script type="text/javascript" src={{url_for('.static', filename='js/plot/three.module.js')}}></script>
+    <script type="text/javascript" src={{url_for('.static', filename='js/plot/view.js')}}></script>
+</body>
+</html>
